@@ -1,6 +1,5 @@
 import { Formik, Form, Field } from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
-import { addNewContact } from '../../redux/contactSlice';
+import { useDispatch } from 'react-redux';
 import { postContact } from '../../redux/api';
 
 export const ContactForm = ({submit}) => {
