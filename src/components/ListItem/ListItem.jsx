@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { removeContact } from '../../redux/actions';
+import { removeContact } from '../../redux/api';
 
 export const ListItem = ({id, name, number }) => {
   const dispatch = useDispatch();
