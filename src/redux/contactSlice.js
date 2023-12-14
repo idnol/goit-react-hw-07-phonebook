@@ -24,7 +24,12 @@ const contactSlice = createSlice({
       })
       .addCase(postContact.fulfilled, (state, action) => {
         state.error = null;
-        state.items.push(action.payload);
+        const hasContact = state.items.some(item => item.name.toLowerCase() === action.payload.name.toLowerCase())
+        if (!hasContact) {
+          state.items.push(action.payload);
+        } else {
+          alert(`${action.payload.name} is already in contacts`);
+        }
       })
       .addCase(postContact.rejected, (state, action) => {
         state.error = action.payload;
